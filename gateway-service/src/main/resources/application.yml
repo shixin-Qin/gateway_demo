@@ -1,0 +1,29 @@
+server:
+  port: 9999
+#  servlet:
+#    context-path: /gateway_service
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: service-demo
+          uri: lb://service-demo  # lb://是指当前注册中心下 后面的是微服务名字
+          predicates:
+            - Path=/gateway-home/service-demo/**
+          filters:
+            - StripPrefix=1
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7007/eureka/eureka
+#  prefer-ip-address: true     #将IP注册到eureka中，如果为false默认注册主机名
