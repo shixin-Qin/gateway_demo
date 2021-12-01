@@ -69,6 +69,7 @@
     <modules>
         <module>eureka_demo_7007</module>
         <module>service-demo</module>
+        <module>service-demo-8002</module>
         <module>gateway-service</module>
     </modules>
 

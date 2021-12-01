@@ -1,0 +1,15 @@
+server:
+  port: 8002
+  servlet:
+    context-path: /service-demo2
+
+spring:
+  application:
+    name: service-demo-8002
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7007/eureka/eureka
+  instance:
+    prefer-ip-address: true     #将IP注册到eureka中，如果为false默认注册主机名
