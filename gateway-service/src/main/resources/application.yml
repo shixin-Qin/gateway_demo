@@ -26,8 +26,8 @@ spring:
             - name: RequestRateLimiter
               args:
                 key-resolver: '#{@hostAddrKeyResolver}' # 用于限流的键的解析器的 Bean 对象的名字
-                redis-rate-limiter.replenishRate: 1     # 令牌桶每秒填充平均速率
-                redis-rate-limiter.burstCapacity: 3     # 令牌桶的容量
+                redis-rate-limiter.replenishRate: 3     # 令牌桶每秒填充平均速率
+                redis-rate-limiter.burstCapacity: 4     # 令牌桶的容量(每秒最大请求数)
 
 
 
